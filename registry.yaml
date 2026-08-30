@@ -36,3 +36,47 @@ resources:
     project: mon
     tracks: mon
 
+  # The pipeline's git-host identities — one application per role, each installed on
+  # this repository only. Credentials never live here: the runner reads them from
+  # JEN_GH_{APP_ID,INSTALLATION,PRIVATE_KEY}_<ROLE> in its environment.
+  - name: mon-design
+    kind: identity
+    surface: git-host
+    provider: github
+    role: design
+    app: jen-mon-design
+    app_id: 4774762
+    installation: 157827359
+    installed_on: mon
+
+  - name: mon-dev
+    kind: identity
+    surface: git-host
+    provider: github
+    role: dev
+    app: jen-mon-dev
+    app_id: 4774763
+    installation: 157827377
+    installed_on: mon
+
+  - name: mon-deliver
+    kind: identity
+    surface: git-host
+    provider: github
+    role: deliver
+    app: jen-mon-deliver
+    app_id: 4774764
+    installation: 157827387
+    installed_on: mon
+
+  # Tracker identity. Currently a personal API key that acts as its creator, not an
+  # agent — pipeline comments and status moves on Linear post under that person.
+  # Swap in a Linear agent (OAuth app, actor=app) to attribute pipeline activity to
+  # the automation; nothing else changes when you do.
+  # - name: mon-agent
+  #   kind: identity
+  #   surface: tracker
+  #   provider: linear
+  #   agent: <agent name>
+  #   agent_id: <uuid>
+
