@@ -4,7 +4,13 @@
       "Bash(git:*)",
       "Bash(gh:*)",
       "Bash(openspec:*)",
-      "Bash(npx openspec:*)"
+      "Bash(npx openspec:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run lint:*)",
+      "Bash(npm run typecheck:*)",
+      "Bash(npm test:*)",
+      "mcp__linear",
+      "mcp__linear__*"
     ]
   }
 }
