@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/joshtgillette/mon#readme",
   "devDependencies": {
-    "@reveer/jen": "^0.3.0"
+    "@reveer/jen": "^0.3.1"
   }
 }
