@@ -1,0 +1,31 @@
+{
+  "name": "mon",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Personal finance CLI: accounts, transactions, imports.",
+  "type": "module",
+  "bin": {
+    "mon": "./dist/cli/mon.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/copy-migrations.mjs",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.11.1",
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/node": "^22.7.4",
+    "eslint": "^9.11.1",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.8.0",
+    "vitest": "^3.2.7"
+  }
+}
