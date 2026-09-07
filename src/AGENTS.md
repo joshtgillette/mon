@@ -24,3 +24,11 @@ directory relative to its own module location, so this layout has to stay parall
 `import_batches` table doesn't exist until a later task, and SQLite can't retroactively attach a
 foreign key to an existing column. Don't add the constraint without adding that table in the same
 migration.
+
+## Database path: `MON_DB_PATH`
+
+The database lives at a per-OS default location (`src/db/paths.ts`): `~/Library/Application
+Support/mon/mon.db` on macOS, `%APPDATA%/mon/mon.db` on Windows, `$XDG_DATA_HOME/mon/mon.db` (or
+`~/.local/share/mon/mon.db`) elsewhere. Setting `MON_DB_PATH` overrides this with an exact file path —
+it's how tests and alternate profiles get an isolated database without touching the real one. Every
+test that touches the database should set it rather than relying on the default.
